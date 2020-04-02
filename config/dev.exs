@@ -23,7 +23,7 @@ config :portfolio, PortfolioWeb.Endpoint,
     keyfile: "priv/cert/selfsigned_key.pem"
   ],
   debug_errors: true,
-  code_reloader: true,
+  code_reloader: false,
   check_origin: false,
   watchers: [
     node: [
@@ -34,7 +34,8 @@ config :portfolio, PortfolioWeb.Endpoint,
       cd: Path.expand("../assets", __DIR__)
     ]
   ],
-  force_ssl: [hsts: :true]
+  force_ssl: [hsts: :true],
+  server: true
 
 # ## SSL Support
 #
