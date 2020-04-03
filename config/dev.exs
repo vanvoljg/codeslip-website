@@ -2,10 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :portfolio, Portfolio.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "portfolio_dev",
-  hostname: "localhost",
+  url: "${DATABASE_URL}",
+  ssl: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 2
 
