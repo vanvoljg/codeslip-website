@@ -34,7 +34,7 @@ config :portfolio, PortfolioWeb.Endpoint,
       cd: Path.expand("../assets", __DIR__)
     ]
   ],
-  force_ssl: [hsts: :true],
+  force_ssl: [hsts: true],
   server: true
 
 # ## SSL Support
