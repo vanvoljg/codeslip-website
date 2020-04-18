@@ -12,11 +12,12 @@ config :portfolio,
 
 # Configures the endpoint
 config :portfolio, PortfolioWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [scheme: "https", host: "localhost", port: System.get_env("PORT") || 4001],
   secret_key_base: "/y9nuHmczKQqXMJK9Wpl0r4G8Pl4lN+7BfAx9czQqFyJc+VgxTQ+8QDJyGJ4b8XX",
   render_errors: [view: PortfolioWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Portfolio.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "nHWGRWaP"]
+  live_view: [signing_salt: "nHWGRWaP"],
+  force_ssl: [hsts: true]
 
 # Configures Elixir's Logger
 config :logger, :console,
